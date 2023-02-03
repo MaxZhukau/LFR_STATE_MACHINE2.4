@@ -63,8 +63,6 @@ char getBTCode() {
        case 'x':
        NOISE = NOISE-10;
         break;
-
-
     }
 
   }
