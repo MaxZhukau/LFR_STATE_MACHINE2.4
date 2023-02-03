@@ -25,7 +25,6 @@ void calibration() {
       if (Sens[i] < minCalibr[i]) {
         minCalibr[i] = Sens[i];
       }
-
     }
    saveCalibr();
   }
