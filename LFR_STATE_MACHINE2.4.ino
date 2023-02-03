@@ -11,8 +11,7 @@ enum EV {
   EV_Ub
 };
 
-
-String Ev[8]{
+String Ev[8] {
   "Ev_NoLine",
   "Ev_Left",
   "Ev_Right",
@@ -24,7 +23,7 @@ String Ev[8]{
 };
 #include <SoftwareSerial.h>
 #include <EEPROM.h>
-//#include <IRremote.hpp>
+#include <IRremote.hpp>
 #include "Variables.h"
 SoftwareSerial BTSerial(3, 2);
 
@@ -58,23 +57,23 @@ void DoState() {
     case STOP:
       DoSTOP();
       break;
-      
+
     case MOVE:
       DoMOVE();
       break;
-      
+
     case READSENS:
       DoREADSENS();
       break;
-      
+
     case INFO:
       DoINFO();
       break;
-      
+
     case CALIBR:
       DoCALIBR();
       break;
-      
+
     case INFO_CALIBR:
       DoINFO_CALIBR();
       break;
@@ -105,7 +104,7 @@ void ChangeState(State newState) {
     case CALIBR:
       BTSerial.println("TO_CALIBR");
       break;
-      
+
     case INFO_CALIBR:
       BTSerial.println("TO_INFO_CALIBR");
       break;
