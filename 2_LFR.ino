@@ -9,7 +9,6 @@ void LFR() {
   switch (EventLine[DL]) {
     case EV_Corner_R:
       lastPos = 9000;
-     
       return lastPos;
       break;
     case EV_Corner_L:
