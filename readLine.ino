@@ -27,15 +27,7 @@ int readLine() {
     }
   }
 
-  if (DL == B00011111 || DL == B00001111) {
-    lastPos = 9000;
-    return lastPos;
-  }
-
-  if (DL == B11111000 || DL == B11110000) {
-    lastPos = 0;
-    return lastPos;
-  }
+  
 
   if (onLine == false) {
     if (lastPos < target) {

@@ -8,13 +8,12 @@ void resetLFR() {
 void LFR() {
   switch (EventLine[DL]) {
     case EV_Corner_R:
-      lastPos = 0;
-      drive(100, -100);
+      lastPos = 9000;
+     
       return lastPos;
       break;
     case EV_Corner_L:
-      lastPos = 9000;
-      drive(-100, 100);
+      lastPos = 0;
       return lastPos;
       break;
     default:
