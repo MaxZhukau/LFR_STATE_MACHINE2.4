@@ -24,16 +24,17 @@ int readLine() {
     W = W / 2;
   }
 
-  if (DL == B00011111 || DL == B00001111) {
-      lastPos = 9000;
-      return lastPos;
-    }
+  switch (EventLine[DL]) {
+    case EV_Corner_R:
+      lastPos = maxValue;
+      return lastPos;  // ?
+      break;
+    case EV_Corner_L:
+      lastPos = minValue;
+      return lastPos;  // ?
+      break;
+  }
 
-    if (DL == B11111000 || DL == B11110000) {
-      lastPos = 0;
-      return lastPos;
-    }
-    
   if (onLine == false) {
     if (lastPos < target) {
       return minValue;
