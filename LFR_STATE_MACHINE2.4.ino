@@ -1,26 +1,4 @@
-byte EventLine[256];
 
-enum EV {
-  EV_No_Line,
-  EV_L_Line,
-  EV_R_Line,
-  EV_Corner_R,
-  EV_Corner_L,
-  EV_Cross,
-  EV_Center,
-  EV_Ub
-};
-
-String Ev[8] {
-  "Ev_NoLine",
-  "Ev_Left",
-  "Ev_Right",
-  "Ev_CronerR",
-  "Ev_CronerL",
-  "Ev_Cross",
-  "Ev_Center",
-  "Ev_UB"
-};
 #include <SoftwareSerial.h>
 #include <EEPROM.h>
 #include <IRremote.hpp>
@@ -41,6 +19,7 @@ void setup() {
   Serial.begin(9600);
   //IrReceiver.begin(IR);
   loadCalibr();
+  fillEvents();
   BTSerial.begin(9600);
 }
 

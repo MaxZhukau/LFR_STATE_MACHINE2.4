@@ -1,15 +1,39 @@
+byte EventLine[256];
+
+enum EV {
+  EV_No_Line,
+  EV_L_Line,
+  EV_R_Line,
+  EV_Corner_R,
+  EV_Corner_L,
+  EV_Cross,
+  EV_Center,
+  EV_Ub
+};
+
+String Ev[8] {
+  "Ev_NoLine",
+  "Ev_Left",
+  "Ev_Right",
+  "Ev_CronerR",
+  "Ev_CronerL",
+  "Ev_Cross",
+  "Ev_Center",
+  "Ev_UB"
+};
+
 int error;
 int lastError;
 int delta;
 int deltaError;
 int minCalibr[8] {};
 int maxCalibr[8] {};
-//const long IR_STOP = 0xBF40FF00;
-//const long IR_MOVE = 0xEF1FF00;
-//const long IR_READSENS = 0xB649FF00;
-//const long IR_INFO = 0xE11EFF00;
-//const long IR_CALIBR = 0xB34CFF00;
-//const long IR_INFO_CALIBR = 0xB24DFF00;
+const long IR_STOP = 0xBF40FF00;
+const long IR_MOVE = 0xEF1FF00;
+const long IR_READSENS = 0xB649FF00;
+const long IR_INFO = 0xE11EFF00;
+const long IR_CALIBR = 0xB34CFF00;
+const long IR_INFO_CALIBR = 0xB24DFF00;
 const char BT_STOP = '2';
 const char BT_MOVE = '1';
 const char BT_READSENS = '3';
@@ -25,7 +49,7 @@ const char B_M = 'p';
 
 const byte button = 12;
 const byte led = 11;
-//const byte IR = 10;
+const byte IR = 10;
 const byte LMotorPwm = 5;
 const byte LMotor2 = 4;
 const byte LMotor1 = 7;
@@ -40,6 +64,7 @@ long BTData;
 
 int BSpeed = 200;
 int ws[8] = { 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000 };
+
 
 int minSpeed = -50 ;
 int maxSpeed = 220;
@@ -62,6 +87,7 @@ char getBTCode();
 
 unsigned long StartTime;
 unsigned long DeltaTime;
+byte DL = 0;
 
 enum State { STOP,
              MOVE,
