@@ -6,7 +6,7 @@ char getBTCode() {
       case '1':
         retCmd = BT_MOVE;
         break;
-      case '0':
+      case '2':
         retCmd = BT_STOP;
         break;
       case '3':
