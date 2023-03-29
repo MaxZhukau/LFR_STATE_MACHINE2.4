@@ -5,4 +5,5 @@ void loadCalibr() {
     EEPROM.get(adr + 2, maxCalibr[i]);
     adr = adr + 4;
   }
+  
 }

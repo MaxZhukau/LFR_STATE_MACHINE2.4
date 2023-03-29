@@ -19,6 +19,7 @@ void setup() {
   Serial.begin(9600);
   //IrReceiver.begin(IR);
   loadCalibr();
+  Get();
   fillEvents();
   BTSerial.begin(9600);
 }

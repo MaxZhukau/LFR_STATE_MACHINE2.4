@@ -5,4 +5,6 @@ void saveCalibr() {
     EEPROM.put(adr + 2, maxCalibr[i]);
     adr = adr + 4;
   }
+  
+
 }

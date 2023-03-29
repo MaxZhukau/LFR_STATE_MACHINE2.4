@@ -66,6 +66,7 @@ char getBTCode() {
     }
 
   }
+  Save();
 
   return retCmd;
 
