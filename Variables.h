@@ -62,7 +62,7 @@ const int ADR = 100;
 //long IRData;
 long BTData;
 
-int BSpeed = 200;
+int BSpeed = 190;
 int ws[8] = { 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000 };
 
 
@@ -73,8 +73,8 @@ int maxValue = 9000;
 int TH_LINE = 200;
 int NOISE = 90;
 
-float kp = 0.07;
-float kd = 0.5;
+float kp = 0.06;
+float kd = 0.6;
 
 void readSens();
 void printSens();
